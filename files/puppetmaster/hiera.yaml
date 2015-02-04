@@ -1,0 +1,13 @@
+---
+:backends:
+  - yaml
+:yaml:
+  :datadir: /etc/puppet/hiera
+:hierarchy:
+  - hosts/%{fqdn}
+  - roles/%{role}
+  - os/%{osfamily}-%{operatingsystem}
+  - os/%{osfamily}
+  - hostgroups/%{hostgroup}
+  - uob
+
