@@ -1,10 +1,5 @@
 # A Role for the puppetmaster
 class roles::puppetmaster {
-
-  class {'puppet':
-    server => true
-  }
-
   selinux::module { 'puppet':
     ensure => 'present',
     source => 'puppet:///modules/roles/puppetmaster/puppet.te',
