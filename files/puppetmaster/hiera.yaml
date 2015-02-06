@@ -5,9 +5,9 @@
   :datadir: /etc/puppet/hiera
 :hierarchy:
   - hosts/%{fqdn}
-  - roles/%{role}
+  - profiles/%{role}
   - os/%{osfamily}-%{operatingsystem}
   - os/%{osfamily}
   - hostgroups/%{hostgroup}
-  - uob
+  - default
 
