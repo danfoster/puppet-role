@@ -5,7 +5,7 @@
   :datadir: /etc/puppet/hiera
 :hierarchy:
   - hosts/%{fqdn}
-  - profiles/%{role}
+  - profiles/%{profile}
   - os/%{osfamily}-%{operatingsystem}
   - os/%{osfamily}
   - hostgroups/%{hostgroup}
