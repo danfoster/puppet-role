@@ -2,7 +2,7 @@
 class role::puppetmaster {
   selinux::module { 'puppet':
     ensure => 'present',
-    source => 'puppet:///modules/roles/puppetmaster/puppet.te',
+    source => 'puppet:///modules/role/puppetmaster/puppet.te',
   }
 
   firewall { '050 accept Puppet':
@@ -25,7 +25,7 @@ class role::puppetmaster {
 
   file { '/etc/puppet/hiera.yaml':
     ensure => file,
-    source => 'puppet:///modules/roles/puppetmaster/hiera.yaml',
+    source => 'puppet:///modules/role/puppetmaster/hiera.yaml',
   }
 
   include foreman

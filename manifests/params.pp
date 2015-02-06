@@ -1,3 +1,3 @@
-# == Class: roles::params
-class role::params {
+# == Class: role::params
+class role::param {
 }

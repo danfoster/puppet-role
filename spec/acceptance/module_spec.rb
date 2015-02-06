@@ -1,10 +1,10 @@
 require 'spec_helper_acceptance'
 
-describe 'roles class' do
+describe 'role class' do
   describe 'running puppet code' do
     it 'apply manifest' do
       pp = <<-EOS
-        class { 'roles::puppetmaster': }
+        class { 'role::puppetmaster': }
       EOS
 
       # Run it twice and test for idempotency

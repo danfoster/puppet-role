@@ -24,7 +24,7 @@ RSpec.configure do |c|
   # Configure all nodes in nodeset
   c.before :suite do
     # Install module
-    puppet_module_install(:source => proj_root, :module_name => 'roles')
+    puppet_module_install(:source => proj_root, :module_name => 'role')
     hosts.each do |host|
       # Install and dep modules, e.g. 
          on host, puppet('module','install','theforeman-puppet'), { :acceptable_exit_codes => [0,1] }
