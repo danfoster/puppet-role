@@ -31,10 +31,16 @@ class role::puppetmaster {
   include foreman
   include foreman_proxy
 
+  if ! defined(Class['puppet']) {
+    class { 'puppet' : 
+      server => true
+    }
+  }
 
   class { 'puppetdb': }
   class { 'puppetdb::master::config':
-    manage_storeconfigs => false
+    manage_storeconfigs => false,
+    restart_puppet => false
   }
     
   postgresql::server::db { $foreman::db_database:
