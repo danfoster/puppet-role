@@ -28,6 +28,11 @@ class role::puppetmaster {
     source => 'puppet:///modules/role/puppetmaster/hiera.yaml',
   }
 
+  file { '/etc/r10k.yaml':
+    ensure => file,
+    source => 'puppet:///modules/role/puppetmaster/r10k.yaml',
+  }
+
   include foreman
   include foreman_proxy
 
