@@ -23,6 +23,12 @@ class role::puppetmaster {
     action => accept,
   }
 
+  firewall { '050 accept foreman-proxy':
+    port   => 8443,
+    proto  => tcp,
+    action => accept,
+  }
+
   file { '/etc/puppet/hiera.yaml':
     ensure => file,
     source => 'puppet:///modules/role/puppetmaster/hiera.yaml',
