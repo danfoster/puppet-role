@@ -2,5 +2,5 @@
 :cachedir: /var/cache/r10k
 :sources:
   :local:
-    remote: https://bitbucket.org/uobacrc/acrc-puppet.git
+    remote: https://github.com/danfoster/zem-puppet.git
     basedir: /etc/puppet/environments
