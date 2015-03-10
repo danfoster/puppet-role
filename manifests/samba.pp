@@ -10,6 +10,7 @@ class role::samba {
       'usershare max shares = 100',
       'usershare allow guests = yes',
       'usershare owner only = no',
+      'encrypt passwords = yes',
     ]
   }
 
