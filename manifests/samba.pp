@@ -7,5 +7,11 @@ class role::samba {
     selinux_enable_home_dirs => true,
   }
 
+  firewall { '050 accept smb':
+    port   => [139, 445],
+    proto  => tcp,
+    action => accept,
+  }
+
 
 }
