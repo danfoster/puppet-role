@@ -7,7 +7,7 @@ class role::samba {
     selinux_enable_home_dirs => true,
     extra_global_options     => [
       'usershare path = /var/lib/samba/usershares',
-      'usershare max share = 100',
+      'usershare max shares = 100',
       'usershare allow guests = yes',
       'usershare owner only = no',
     ]
