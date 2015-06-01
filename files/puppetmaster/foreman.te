@@ -1,0 +1,24 @@
+
+module foreman 1.0;
+
+require {
+	type fs_t;
+	type httpd_t;
+	type puppet_etc_t;
+	type passenger_t;
+	type var_lib_t;
+	class file { ioctl getattr read open execute execute_no_trans };
+	class filesystem getattr;
+}
+
+#============= httpd_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow httpd_t puppet_etc_t:file getattr;
+
+#============= passenger_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow passenger_t fs_t:filesystem getattr;
+allow passenger_t puppet_etc_t:file { execute execute_no_trans };
+allow passenger_t var_lib_t:file { read getattr open ioctl };

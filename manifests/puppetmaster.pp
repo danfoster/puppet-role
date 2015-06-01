@@ -5,6 +5,11 @@ class role::puppetmaster {
     source => 'puppet:///modules/role/puppetmaster/puppet.te',
   }
 
+  selinux::module { 'foreman':
+    ensure => 'present',
+    source => 'puppet:///modules/role/puppetmaster/foreman.te',
+  }
+
   firewall { '050 accept Puppet':
     port   => 8140,
     proto  => tcp,
